@@ -1,0 +1,160 @@
+%text-input-base {
+	border: 0;
+	border-radius: $base-border-radius;
+	font-size: $base-font-size;
+	font-weight: 400;
+	padding: $form-input-padding;
+	width: 100%;
+}
+
+%text-input-base-style {
+	background-color: $input-bg-color;
+	box-shadow: $form-box-shadow;
+	color: $form-font-color;
+
+	&:focus {
+		box-shadow: $form-box-shadow-focus;
+		outline: none;
+	}
+}
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+select,
+textarea {
+	@extend %text-input-base;
+	@extend %text-input-base-style;
+}
+
+input[type="color"] {
+	padding: $form-input-padding / 2;
+}
+
+input[type="range"] {
+	appearance: none;
+	height: 28px;
+	margin: 10px 0;
+	width: 100%;
+
+	&:focus {
+		outline: none;
+
+		&::-ms-fill-lower {
+			background: $form-border-color-focus;
+		}
+
+		&::-ms-fill-upper {
+			background: $form-border-color-focus;
+		}
+
+		&::-webkit-slider-runnable-track {
+			background: $form-border-color-focus;
+		}
+	}
+
+	&::-webkit-slider-runnable-track {
+		background: $form-border-color;
+		border: 0 none;
+		border-radius: $base-border-radius;
+		cursor: pointer;
+		height: 3px;
+		width: 100%;
+	}
+
+	&::-webkit-slider-thumb {
+		appearance: none;
+		background: $base-button-bg-color;
+		border: 0 none;
+		border-radius: 100%;
+		cursor: pointer;
+		height: 28px;
+		margin-top: -14px;
+		width: 28px;
+	}
+
+	&::-moz-range-track {
+		background: $form-border-color;
+		border-radius: $base-border-radius;
+		cursor: pointer;
+		height: 3px;
+		width: 100%;
+	}
+
+	&::-moz-range-thumb {
+		background: $base-button-bg-color;
+		border: 0 none;
+		border-radius: 100%;
+		cursor: pointer;
+		height: 28px;
+		width: 28px;
+	}
+
+	&::-ms-track {
+		background: transparent;
+		border-color: transparent;
+		color: transparent;
+		cursor: pointer;
+		height: 3px;
+		width: 100%;
+	}
+
+	&::-ms-fill-lower {
+		background: $form-border-color;
+		border-radius: $base-border-radius;
+	}
+
+	&::-ms-fill-upper {
+		background: $form-border-color;
+		border-radius: $base-border-radius;
+	}
+
+	&::-ms-thumb {
+		background: $base-button-bg-color;
+		border: 0 none;
+		border-radius: 100%;
+		cursor: pointer;
+		height: 28px;
+		margin-top: 0;
+		width: 28px;
+	}
+}
+
+%select-base {
+	appearance: none;
+	background-image: url( "images/select-bg.svg" );
+	background-position: right 5px center;
+	background-repeat: no-repeat;
+	background-size: 10px;
+	padding-right: 20px;
+}
+
+select {
+	@extend %select-base;
+}
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
+}
+
+input,
+textarea {
+	&::placeholder {
+		color: $form-placeholder-color;
+		font-weight: 400;
+		opacity: 1;
+	}
+}

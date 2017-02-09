@@ -1,7 +1,7 @@
 module.exports = {
 	all: {
 		files: {
-			'assets/js/thebiz.min.js': ['assets/js/thebiz.js']
+			'assets/js/project.min.js': ['assets/js/project.js']
 		},
 		options: {
 			banner: '/*! <%= pkg.title %> - v<%= pkg.version %>\n' +

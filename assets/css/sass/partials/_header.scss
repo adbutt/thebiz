@@ -1,0 +1,62 @@
+.site-header {
+	color: $base-font-color;
+	padding: 10px 0;
+
+	@include min-screen( $small-screen ) {
+		padding: 15px 0;
+	}
+
+	@include min-screen( $medium-screen ) {
+		padding: 25px 0;
+	}
+
+	.wrap {
+		align-items: center;
+		display: flex;
+
+		@include min-screen( $medium-screen ) {
+			display: block;
+		}
+	}
+}
+
+/* Title Area
+--------------------------------------------- */
+
+.site-branding {
+	display: inline-block;
+	float: none;
+	margin-right: 0;
+	width: auto;
+
+	@include min-screen( $medium-screen ) {
+		@include span( 3 of 12 );
+	}
+}
+
+.site-title {
+	font-family: $header-font-family;
+	font-size: $site-title-font-size;
+	font-weight: 600;
+	line-height: 1.2;
+	text-rendering: optimizeLegibility;
+
+	a,
+	a:hover,
+	a:focus {
+		color: $base-heading-color;
+	}
+}
+
+.site-description {
+	color: $base-font-color;
+	font-family: $header-font-family;
+	font-size: $site-description-font-size;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.site-description,
+.site-title {
+	margin-bottom: 0;
+}

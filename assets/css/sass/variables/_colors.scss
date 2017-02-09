@@ -1,0 +1,110 @@
+// This file controls all base color styles for our theme. All colors should be
+// defined in _colors.scss. This allows us to at a glance determine global color
+// styles of our theme and prevents arbitrary color assignment.
+
+// Do not use the base theme colors in the scss partial files! Set up your theme's
+// base colors and then use scoped color values in your Sass partials.
+
+// Theme Colors (private vars)
+//------------------------------------------------------------------------------
+$off-black:   #1c1e1f;
+$dark-gray:   #474e57;
+$medium-gray: #5d646b;
+$light-gray:  #a4a5a5;
+$fog:         #ccc;
+$medium-fog:  #e0e0e0;
+$light-fog:   #f3f3f4;
+$white:       #fff;
+$light-blue:  #69c0fc;
+$medium-blue: #1079c2;
+$dark-blue:   #00376c;
+
+// Global Base Colors
+//------------------------------------------------------------------------------
+$base-bg-color:             $white;
+$base-font-color:           $dark-gray;
+$base-border-color:         $medium-fog;
+$base-accent-color:         $light-gray;
+$base-heading-color:        $off-black;
+$base-heading-color-hover:  $medium-blue;
+$base-blockquote-color:     $medium-gray;
+$base-link-color:           $medium-blue;
+$base-link-color-hover:     lighten( $base-link-color, 10 );
+$base-alt-link-color:       $medium-gray;
+$base-alt-link-color-hover: $base-link-color;
+$base-selection-bg-color:   $off-black;
+$base-selection-color:      $white;
+$base-insert-color:         lighten( $light-blue, 45 );
+
+// Button Colors
+//------------------------------------------------------------------------------
+$base-button-bg-color:         $off-black;
+$base-button-bg-color-hover:   lighten( $base-button-bg-color, 10 );
+$base-button-font-color:       $white;
+$base-button-font-color-hover: $white;
+$cta-button-bg-color:          $light-blue;
+$cta-button-bg-color-hover:    lighten( $cta-button-bg-color, 10 );
+$cta-button-font-color:        $white;
+$cta-button-font-color-hover:  $white;
+
+// Form Colors
+//------------------------------------------------------------------------------
+$input-bg-color:          $light-fog;
+$form-font-color:         $base-font-color;
+$form-border-color:       $base-border-color;
+$form-border-color-hover: darken( $base-border-color, 5 );
+$form-border-color-focus: darken( $base-border-color, 20 );
+$form-placeholder-color:  darken( $base-border-color, 10 );
+
+// Navigation Colors
+//------------------------------------------------------------------------------
+$nav-link-color:          $dark-gray;
+$nav-link-color-hover:    $base-link-color;
+$subnav-bg-color:         $dark-gray;
+$subnav-bg-color-hover:   $medium-gray;
+$subnav-link-color:       $light-fog;
+$subnav-link-color-hover: $white;
+
+// Mobile Menu Colors
+//------------------------------------------------------------------------------
+$menu-toggle-bg-color:       transparent;
+$menu-toggle-bg-color-hover: transparent;
+$menu-toggle-link-color:     $off-black;
+$menu-toggle-color-hover:    $light-gray;
+$menu-mobile-bg-color:       lighten( $off-black, 3 );
+$menu-mobile-color:          lighten( $nav-link-color, 30 );
+$menu-mobile-color-hover:    $base-link-color;
+$menu-mobile-subnav-color:   lighten( $nav-link-color, 15 );
+
+// Entry Colors
+//------------------------------------------------------------------------------
+$blockquote-border-color:    $light-fog;
+$code-bg-color:              $light-fog;
+$code-font-color:            $off-black;
+$entry-meta-font-color:      $medium-gray;
+$pre-bg-color:               $light-fog;
+$corner-ribbon-bg-color:     $base-link-color;
+$corner-ribbon-font-color:   $white;
+$gallery-caption-bg-color:   $off-black;
+$gallery-caption-font-color: $white;
+
+// SiteCare Colors
+//------------------------------------------------------------------------------
+$intro-paragraph-border-color:     $light-fog;
+
+// Comment Section Colors
+//------------------------------------------------------------------------------
+$comments-font-color:               $base-font-color;
+$comment-header-bg-color:           $light-fog;
+$comment-author-header-bg-color:    lighten( $light-blue, 50 );
+$comment-table-bg-color:            $white;
+$comment-reply-link-bg-color:       $light-fog;
+$comment-reply-link-bg-color-hover: $white;
+$allowed-tags-bg-color:             $light-fog;
+
+// Pagination Colors
+//------------------------------------------------------------------------------
+$pagination-bg-color:         $white;
+$pagination-bg-color-hover:   $light-fog;
+$pagination-current-bg-color: darken( $light-fog, 4 );
+$pagination-link-color:       $base-font-color;

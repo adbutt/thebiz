@@ -5,7 +5,7 @@ module.exports = {
 			sourceMap: true
 		},
 		files: {
-			'assets/css/thebiz.css': 'assets/css/sass/thebiz.scss'
+			'assets/css/project.css': 'assets/css/sass/project.scss'
 		}
 	}
 };

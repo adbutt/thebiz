@@ -1,0 +1,13 @@
+.site-footer {
+	font-size: $medium-font-size;
+	padding: $base-padding 0;
+	text-align: center;
+
+	p {
+		margin-bottom: 0;
+	}
+
+	a {
+		@include alt-link-color();
+	}
+}

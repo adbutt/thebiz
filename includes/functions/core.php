@@ -58,7 +58,7 @@ function scripts() {
 
 	wp_enqueue_script(
 		'biz_',
-		BIZ__TEMPLATE_URL . "/assets/js/thebiz{$min}.js",
+		BIZ__TEMPLATE_URL . "/assets/js/project{$min}.js",
 		array(),
 		BIZ__VERSION,
 		true
@@ -85,7 +85,7 @@ function styles() {
 
 	wp_enqueue_style(
 		'biz_',
-		BIZ__URL . "/assets/css/thebiz{$min}.css",
+		BIZ__URL . "/assets/css/project{$min}.css",
 		array(),
 		BIZ__VERSION
 	);

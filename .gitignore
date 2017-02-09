@@ -4,6 +4,7 @@ vendor
 composer.lock
 phpunit.xml
 .idea
+assets/bower
 # ignore all files that start with ~
 ~
 .map

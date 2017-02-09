@@ -1,0 +1,125 @@
+/* Archive Pagination
+--------------------------------------------- */
+
+.pagination {
+	display: block;
+	margin-bottom: 20px;
+	text-align: center;
+
+	.page-numbers {
+		background: $pagination-bg-color;
+		border-radius: $base-border-radius;
+		display: inline-block;
+		margin-bottom: 10px;
+		padding: 10px 20px;
+		transition: all 0.2s ease-in-out;
+	}
+
+	.current {
+		background: $pagination-current-bg-color;
+	}
+
+	a {
+		color: $pagination-link-color;
+
+		&:hover,
+		&:focus {
+			background: $pagination-bg-color-hover;
+		}
+	}
+}
+
+/* Single Post Pagination
+--------------------------------------------- */
+
+.page-links {
+	display: block;
+	margin: $base-margin 0;
+
+	span,
+	a {
+		border-radius: $base-border-radius;
+		color: $pagination-link-color;
+		display: inline-block;
+		padding: 5px 15px;
+		transition: all 0.2s ease-in-out;
+	}
+
+	span {
+		background: $pagination-current-bg-color;
+	}
+
+	a {
+		background: $pagination-bg-color;
+
+		&:hover,
+		&:focus {
+			background: $pagination-bg-color-hover;
+			color: $pagination-link-color;
+		}
+	}
+}
+
+
+/* Page Links
+--------------------------------------------- */
+.nav-next a {
+
+	@include min-screen( $medium-screen ) {
+		float: right;
+	}
+}
+
+.nav-previous a {
+
+	@include min-screen( $medium-screen ) {
+		float: left;
+	}
+}
+
+.nav-next a,
+.nav-previous a {
+	background: $pagination-bg-color;
+	border-radius: $base-border-radius;
+	color: $pagination-link-color;
+	display: block;
+	margin: 0 0 10px;
+	padding: 16px 20px 14px;
+	text-align: center;
+}
+
+.nav-next a:hover,
+.nav-previous a:hover,
+.nav-next a:focus,
+.nav-previous a:focus {
+	background: $pagination-bg-color-hover;
+	color: $pagination-link-color;
+}
+
+/* Archive Page Links
+--------------------------------------------- */
+
+.nav-archive {
+	clear: both;
+	display: block;
+	font-size: $pagination-font-size;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+/* Single Entry Page Links
+--------------------------------------------- */
+
+.nav-single {
+	clear: both;
+	display: block;
+	font-size: $pagination-font-size;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding: 0;
+	text-transform: uppercase;
+}

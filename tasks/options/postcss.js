@@ -6,7 +6,7 @@ module.exports = {
 			]
 		},
 		files: { 
-			'assets/css/thebiz.css': [ 'assets/css/thebiz.css' ]
+			'assets/css/project.css': [ 'assets/css/project.css' ]
 		}
 	}
 };

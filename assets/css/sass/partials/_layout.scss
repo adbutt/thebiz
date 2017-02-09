@@ -1,0 +1,125 @@
+/* Site Containers
+--------------------------------------------- */
+
+%wrap {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $base-wrap-max-width;
+	padding-left: 5%;
+	padding-right: 5%;
+
+	@include min-screen( $small-screen ) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	@include min-screen( $medium-screen ) {
+		max-width: $wrap-max-width-medium;
+	}
+
+	@include min-screen( $large-screen ) {
+		max-width: $wrap-max-width-large;
+	}
+}
+
+.site-container {
+	position: relative;
+}
+
+.site-inner {
+	@extend %wrap;
+	clear: both;
+	padding-top: 5%;
+	word-break: normal;
+	word-wrap: break-word;
+
+	@include min-screen( $smaller-screen ) {
+		padding-top: $site-inner-padding;
+	}
+}
+
+.wrap {
+	@extend %wrap;
+}
+
+/* Content
+--------------------------------------------- */
+
+.layout-1c-narrow .content {
+	padding: 0;
+}
+
+@include min-screen( $medium-screen ) {
+	@include nested( 12 ) {
+		.layout-1c-narrow .content {
+			@include span( 8 );
+			@include push( 2 );
+			@include post( 2 );
+		}
+
+		.layout-2c-l .content,
+		.layout-2c-r .content {
+			@include span( 8 );
+		}
+
+		.layout-2c-l .content {
+			@include last();
+		}
+
+		.sidebar {
+			@include span( 4 );
+		}
+
+		.layout-2c-r .sidebar {
+			@include last();
+		}
+	}
+}
+
+.layout-1c .sidebar,
+.layout-1c-narrow .sidebar {
+	display: none;
+}
+
+/* Column Classes
+--------------------------------------------- */
+
+@include min-screen( $small-screen ) {
+	@include nested( 12 ) {
+		.one-half,
+		.three-sixths,
+		.two-fourths {
+			@include span( 6 );
+		}
+
+		.one-third,
+		.two-sixths {
+			@include span( 4 );
+		}
+
+		.four-sixths,
+		.two-thirds {
+			@include span( 8 );
+		}
+
+		.one-fourth {
+			@include span( 3 );
+		}
+
+		.three-fourths {
+			@include span( 9 );
+		}
+
+		.one-sixth {
+			@include span( 2 );
+		}
+
+		.five-sixths {
+			@include span( 10 );
+		}
+	}
+
+	.last {
+		@include last();
+	}
+}

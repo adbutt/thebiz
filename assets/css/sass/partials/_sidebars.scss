@@ -1,0 +1,64 @@
+/* General sidebars
+--------------------------------------------- */
+.sidebar {
+	font-size: $medium-font-size;
+
+	a {
+		@include alt-link-color();
+	}
+
+	li {
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+		position: relative;
+	}
+
+	p:last-child,
+	ul > li:last-child {
+		margin-bottom: 0;
+	}
+
+	.widget-title a {
+		color: $base-heading-color;
+	}
+}
+
+/* Footer Widgets
+--------------------------------------------- */
+.footer-widgets {
+	color: $base-font-color;
+	font-size: $medium-font-size;
+	padding: $base-padding 0 10px;
+
+	@include min-screen( $medium-screen ) {
+		.widget {
+			@include span( 4 of 12 );
+
+			&:nth-of-type(3n) {
+				@include last();
+			}
+		}
+	}
+
+	.widget-title {
+		color: $base-heading-color;
+	}
+
+	a {
+		@include alt-link-color();
+	}
+
+	li {
+		margin-bottom: 5px;
+		padding-bottom: 5px;
+	}
+
+	p:last-child,
+	ul > li:last-child {
+		margin-bottom: 0;
+	}
+
+	.entry {
+		margin-bottom: 10px;
+	}
+}

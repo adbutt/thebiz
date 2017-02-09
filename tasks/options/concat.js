@@ -9,8 +9,8 @@ module.exports = {
 	},
 	main: {
 		src: [
-			'assets/js/src/thebiz.js'
+			'assets/js/src/project.js'
 		],
-			dest: 'assets/js/thebiz.js'
+			dest: 'assets/js/project.js'
 	}
 };

@@ -1,0 +1,41 @@
+// Load Susy
+@import "vendor/susy/susy";
+
+// Load Media Queries Mixins
+@import "vendor/media-queries";
+
+// Load Theme Mixins
+@import "mixins/global";
+
+// Load Global Settings
+@import "settings/susy";
+
+// Load Global Variables
+@import "variables/colors";
+@import "variables/layout";
+@import "variables/misc";
+@import "variables/typography";
+@import "variables/z-index";
+
+/*
+Defaults
+----------------------------------------------------------------------------- */
+@import "partials/defaults/base";
+
+
+/*
+Common Classes
+----------------------------------------------------------------------------- */
+@import "partials/common-classes";
+
+
+/*
+SiteCare Styles
+----------------------------------------------------------------------------- */
+@import "partials/sitecare";
+
+
+body {
+	@include entry-content;
+	max-width: span( 9 of 12 );
+}

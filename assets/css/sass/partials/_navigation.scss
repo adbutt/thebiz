@@ -1,0 +1,269 @@
+.nav-menu {
+	clear: both;
+	font-size: 0.001px;
+	line-height: 1;
+	width: 100%;
+
+	.menu-item {
+		display: inline-block;
+		font-size: $nav-font-size;
+		text-align: left;
+	}
+
+	> .menu-item > a {
+		text-transform: uppercase;
+	}
+
+	li > a {
+		color: $nav-link-color;
+		display: block;
+		padding: 25px 15px;
+
+		@include min-screen( $large-screen ) {
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+	li a:hover,
+	li a:focus,
+	.current-menu-item > a,
+	.current-menu-ancestor > a,
+	.current-menu-parent > a {
+		color: $nav-link-color-hover;
+	}
+
+	.sub-menu {
+		left: -9999px;
+		opacity: 0;
+		position: absolute;
+		width: 200px;
+		z-index: $sub-menu-z-index;
+
+		a {
+			background-color: $subnav-bg-color;
+			color: $subnav-link-color;
+			font-size: $subnav-font-size;
+			padding: 20px;
+			position: relative;
+			width: 200px;
+
+			&:hover,
+			&:focus {
+				background-color: $subnav-bg-color-hover;
+				color: $subnav-link-color-hover;
+			}
+		}
+
+		.current-menu-item > a,
+		.current-menu-ancestor > a,
+		.current-menu-parent > a {
+			color: $subnav-link-color-hover;
+
+			&:hover,
+			&:focus {
+				color: $subnav-link-color-hover;
+			}
+		}
+
+		.sub-menu {
+			margin: -54px 0 0 200px;
+		}
+	}
+
+	.menu-item:hover > .sub-menu,
+	.menu-item-hover > .sub-menu,
+	.menu-item:focus > .sub-menu {
+		left: auto;
+		opacity: 1;
+	}
+}
+
+.menu-primary,
+.menu-secondary {
+	display: none;
+
+	@include min-screen( $medium-screen ) {
+		display: block;
+	}
+}
+
+/* Primary Navigation
+--------------------------------------------- */
+
+.menu-primary {
+
+	@include min-screen( $medium-screen ) {
+		@include span( 9 of 12 );
+		@include last();
+		text-align: right;
+	}
+
+	li > a {
+		padding-bottom: 23px;
+		padding-top: 23px;
+	}
+}
+
+/* Responsive Menu
+--------------------------------------------- */
+
+%stop-scroll {
+	height: 100%;
+	overflow-y: hidden;
+}
+
+body {
+	left: 0;
+	position: relative;
+	transition: left $responsive-menu-transition;
+}
+
+.menu-open {
+	@extend %stop-scroll;
+
+	body {
+		@extend %stop-scroll;
+		left: -260px;
+	}
+}
+
+%toggle-button-base {
+	cursor: pointer;
+	display: block;
+	margin: 0 0 0 auto;
+
+	@include min-screen( $medium-screen ) {
+		display: none;
+	}
+
+	&:hover,
+	&:focus,
+	&:active {
+		outline: none;
+
+		@include min-screen( $medium-screen ) {
+			display: none;
+		}
+	}
+}
+
+.menu-toggle {
+	@extend %toggle-button-base;
+	background: $menu-toggle-bg-color;
+	color: $menu-toggle-link-color;
+	padding: 0;
+
+	&:hover,
+	&:focus,
+	&:active {
+		background: $menu-toggle-bg-color-hover;
+		color: $menu-toggle-color-hover;
+	}
+
+	&::before {
+		font-size: 35px;
+	}
+}
+
+.sub-menu-toggle {
+	@extend %toggle-button-base;
+	background: transparent;
+	bottom: 0;
+	color: $menu-mobile-color;
+	margin: 0;
+	padding: 0 10px;
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	&:focus,
+	&:hover,
+	&:active {
+		background: transparent;
+		color: $menu-mobile-color-hover;
+	}
+
+	&::before {
+		font-size: 30px;
+	}
+}
+
+.menu-mobile {
+	background: $menu-mobile-bg-color;
+	bottom: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	position: fixed;
+	right: -260px;
+	top: 0;
+	transition: right $responsive-menu-transition;
+	width: 260px;
+	z-index: $menu-mobile-z-index;
+
+	&:focus {
+		outline: none;
+	}
+
+	&.visible {
+		right: 0;
+	}
+
+	.wrap {
+		padding: 0;
+	}
+
+	.nav-menu {
+		.menu-item {
+			display: block;
+		}
+
+		li a {
+			color: $menu-mobile-color;
+			padding: $menu-mobile-item-padding;
+			position: relative;
+		}
+
+		li a:hover,
+		li a:focus {
+			background: lighten( $menu-mobile-bg-color, 3 );
+			color: $menu-mobile-color-hover;
+		}
+	}
+
+	.sub-menu {
+		display: none;
+
+		&.activated {
+			display: block;
+		}
+	}
+
+	.sub-menu,
+	.sub-menu .sub-menu {
+		background: transparent;
+		box-shadow: none;
+		margin: 0;
+		opacity: 1;
+		position: static;
+		width: 100%;
+
+		li a {
+			background: $menu-mobile-bg-color;
+			color: $menu-mobile-subnav-color;
+			padding: $menu-mobile-item-padding;
+			padding-left: $menu-mobile-item-padding + 10px;
+			width: auto;
+		}
+
+		li a:hover,
+		li a:focus {
+			background: lighten( $menu-mobile-bg-color, 3 );
+			color: $menu-mobile-color-hover;
+		}
+	}
+
+	.sub-menu .sub-menu li a {
+		padding-left: $menu-mobile-item-padding + 20px;
+	}
+}
